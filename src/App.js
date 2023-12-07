@@ -4,7 +4,7 @@ import { Button, TextField } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 import Todo from "./Todo";
 import db from "./firebase";
-import firebase from 'firebase/compat/firestore';
+import firebase from 'firebase/compat/app';
 
 
 
