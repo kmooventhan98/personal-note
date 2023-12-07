@@ -6,7 +6,7 @@ import Todo from "./Todo";
 import db from "./firebase";
 import firebase from './firebase';
 
-console.log('firebase', firebase.firestore.FieldValue.serverTimestamp())
+
 
 function App() {
   const [todos, setTodos] = useState([]);
