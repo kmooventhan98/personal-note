@@ -19,7 +19,7 @@ function App() {
     db.collection("todos").orderBy('timestamp', 'desc').onSnapshot((snapshot) => {
       // console.group('my snapshot')
       // console.log(snapshot.docs.map((doc) => doc.data().todo));
-      setTodos(snapshot.docs.map((doc) => doc.data().todo));
+      setTodos(snapshot.docs.map((doc) => ({id: doc.id, todo: doc.data().todo})));
     });
   }, []);
 
@@ -53,13 +53,9 @@ function App() {
         >
           Send
         </Button>{" "}
-        <>{}</>
-        <Button variant="contained" onClick={() => window.location.reload()}>
-          Hard Refresh
-        </Button>
         <ul>
           {todos.map((todo) => (
-            <Todo text={todo} id={Date.now()} />
+            <Todo todo={todo} />
           ))}
         </ul>
       </form>
